@@ -1,4 +1,4 @@
-import React, {useCallback, useContext, useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {SafeAreaView, StatusBar} from 'react-native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {NavigationContainer} from '@react-navigation/native';
@@ -7,6 +7,7 @@ import Splash from '../screens/Splash';
 import AuthNavigator from './AuthNavigator';
 import HomeStackNavigator from './HomeStackNavigator';
 import {useAuth} from '../context/AuthContext';
+import Text from '../components/common/Text';
 
 const Stack = createNativeStackNavigator();
 
@@ -15,12 +16,20 @@ const RootNavigator = () => {
   const [appIsReady, setAppIsReady] = useState(false);
 
   useEffect(() => {
-    setTimeout(() => setAppIsReady(true), 2000);
+    // setTimeout(() => {
+    //   setAppIsReady(true);
+    // }, 2000);
   }, []);
 
-  if (!appIsReady) {
-    return <Splash />;
-  }
+  // if (!appIsReady) {
+  //   return <Splash />;
+  // }
+
+  return (
+    <SafeAreaView style={{flex: 1, backgroundColor: 'red'}}>
+      <Text>Hello!</Text>
+    </SafeAreaView>
+  );
 
   return (
     <SafeAreaView

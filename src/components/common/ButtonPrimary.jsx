@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import {
   Text,
   StyleSheet,
@@ -6,8 +6,8 @@ import {
   ActivityIndicator,
   TouchableOpacity,
 } from 'react-native';
-import {PRIMARY_COLOR, PRIMARY_TEXT_COLOR} from '../utils/styles';
-import ThemeContext from '../store/ThemeContext';
+import {PRIMARY_COLOR, PRIMARY_TEXT_COLOR} from '../../utils/styles';
+import {useTheme} from '../../context/ThemeContext';
 
 export default function ButtonPrimary({
   type,
@@ -18,7 +18,7 @@ export default function ButtonPrimary({
   size = 'large',
   style = {},
 }) {
-  const {themeStyles} = useContext(ThemeContext);
+  const {themeStyles} = useTheme();
   let customStyle = {};
   let customLableStyle = {};
   let labelSize = 16;

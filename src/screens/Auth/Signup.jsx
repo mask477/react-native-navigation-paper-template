@@ -1,28 +1,16 @@
-import {
-  StyleSheet,
-  TouchableOpacity,
-  View,
-  ScrollView,
-  Dimensions,
-  Image,
-} from 'react-native';
+import {StyleSheet, View, ScrollView, Dimensions} from 'react-native';
 import React, {useEffect, useState} from 'react';
-import Ionicons from '@expo/vector-icons/Ionicons';
-import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 
 import Text from '../../components/common/Text';
 import TextInput from '../../components/common/TextInput';
-import moment from 'moment';
 import {useTheme} from '../../context/ThemeContext';
 import ButtonPrimary from '../../components/common/ButtonPrimary';
 
 export default function Signup({navigation}) {
-  const {theme, themeStyles} = useTheme();
+  const {themeStyles} = useTheme();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
-  const [modalVisible, setModalVisible] = useState(false);
 
   useEffect(() => {}, []);
 
@@ -105,7 +93,6 @@ const styles = StyleSheet.create({
     width: WindowWidth / 3,
     height: WindowWidth / 3,
     borderRadius: WindowWidth / 3,
-    // padding: 10,
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',

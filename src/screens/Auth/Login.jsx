@@ -11,15 +11,15 @@ import {
 import Text from '../../components/common/Text';
 import TextInput from '../../components/common/TextInput';
 import MyToast from '../../components/MyToast';
-
-import AuthContext from '../../store/AuthContext';
-import ThemeContext from '../../store/ThemeContext';
-import {APP_NAME} from '../../utils/constants';
 import ButtonPrimary from '../../components/common/ButtonPrimary';
 
+import {useAuth} from '../../context/AuthContext';
+import {useTheme} from '../../context/ThemeContext';
+import {APP_NAME} from '../../utils/constants';
+
 function Login({navigation}) {
-  const {login, guestLogin} = useContext(AuthContext);
-  const {themeStyles} = useContext(ThemeContext);
+  const {login, guestLogin} = useAuth();
+  const {themeStyles} = useTheme();
 
   const [toast, setToast] = useState();
   const [toastStatus, setToastStatus] = useState();

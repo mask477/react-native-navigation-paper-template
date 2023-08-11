@@ -1,10 +1,11 @@
-import React, { useContext } from "react";
-import * as RN from "react-native";
-import { FONT_FAMILY } from "../../utils/styles";
-import ThemeContext from "../../store/ThemeContext";
+import React from 'react';
+import * as RN from 'react-native';
+import {FONT_FAMILY} from '../../utils/styles';
 
-export default function Text({ children, style, color = null }) {
-  const { themeStyles } = useContext(ThemeContext);
+import {useTheme} from '../../context/ThemeContext';
+
+export default function Text({children, style, color = null}) {
+  const {themeStyles} = useTheme();
 
   return (
     <RN.Text
@@ -19,8 +20,7 @@ export default function Text({ children, style, color = null }) {
               color,
             }
           : {},
-      ]}
-    >
+      ]}>
       {children}
     </RN.Text>
   );
