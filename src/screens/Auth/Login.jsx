@@ -120,7 +120,6 @@ function Login({navigation}) {
           onChangeText={handlePasswordOnChange}
           value={txtPassword}
           type="password"
-          pw={true}
           style={styles.inpuText}
         />
 
@@ -141,17 +140,15 @@ function Login({navigation}) {
         />
       </View>
       <View style={[styles.bottomArea]}>
+        <Text style={styles.labelBottom}>OR</Text>
         <TouchableOpacity onPress={onPressSignup}>
           <Text style={styles.labelBottom}>
             Don't have an account? <Text style={styles.bold}>Signup</Text>
           </Text>
         </TouchableOpacity>
-        <Text style={styles.labelBottom}>OR</Text>
       </View>
-      {toast !== '' ? (
+      {toast !== '' && (
         <MyToast title="Error" message={toast} status={toastStatus} />
-      ) : (
-        <></>
       )}
     </ScrollView>
   );
@@ -164,17 +161,8 @@ const width = Dimensions.get('window').width;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    width: '100%',
     paddingTop: 30,
-  },
-  buttonContainer: {
-    flex: 0.85,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#7708ED',
-    color: '#fff',
-    borderRadius: 5,
+    paddingHorizontal: 20,
   },
   buttonText: {
     color: '#fff',
@@ -206,11 +194,8 @@ const styles = StyleSheet.create({
     marginTop: height * 0.015,
   },
   controls: {
-    flex: 2,
     direction: 'row',
     justifyContent: 'flex-start',
-    paddingLeft: 15,
-    paddingRight: 15,
     marginTop: 30,
   },
   inpuText: {

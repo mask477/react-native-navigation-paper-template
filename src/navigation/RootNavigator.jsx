@@ -25,11 +25,7 @@ const RootNavigator = () => {
   //   return <Splash />;
   // }
 
-  return (
-    <SafeAreaView style={{flex: 1, backgroundColor: 'red'}}>
-      <Text>Hello!</Text>
-    </SafeAreaView>
-  );
+  console.log('=== AUTH:', auth);
 
   return (
     <SafeAreaView

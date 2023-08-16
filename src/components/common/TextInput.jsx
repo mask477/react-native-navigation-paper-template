@@ -1,14 +1,7 @@
 import React from 'react';
-import {
-  StyleSheet,
-  View,
-  TextInput,
-  Dimensions,
-  Pressable,
-  TouchableOpacity,
-} from 'react-native';
-import {useContext, useState} from 'react';
-import Ionicons from 'react-native-vector-icons';
+import {StyleSheet, View, TextInput, Pressable} from 'react-native';
+import {useState} from 'react';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import Text from './Text';
 import {useTheme} from '../../context/ThemeContext';
@@ -54,6 +47,8 @@ export default ({
     backgroundColor: themeStyles.inputBgColor,
     height: '100%',
   };
+
+  console.log('THEME STYLES:', themeStyles);
 
   return (
     <Pressable
@@ -134,7 +129,7 @@ const styles = StyleSheet.create({
   },
   input: {
     flex: 1,
-    direction: 'row',
+    flexDirection: 'row',
     width: '100%',
     fontFamily: 'Rubik-Regular',
     paddingHorizontal: 10,
